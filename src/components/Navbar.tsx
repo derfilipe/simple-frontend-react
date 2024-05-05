@@ -36,7 +36,7 @@ function Navbar() {
   };
 
   return (
-      <AppBar position="static">
+      <AppBar position="static" >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <img
