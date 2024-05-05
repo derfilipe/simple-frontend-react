@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600;700&display=swap");
+
+:root {
+  /* Define color palette */
+  --primary-color: hsl(28, 88%, 62%);
+  --secondary-color: hsl(0, 0%, 95%);
+  --text-color: hsl(0, 0%, 75%);
+  --background-color: hsl(0, 0%, 100%);
+  /* Define font variables */
+  --body-font: "Montserrat", sans-serif;
+  --heading-font: "Dancing Script", cursive;
+}
+
+/* Apply minimal global styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--body-font);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
