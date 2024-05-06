@@ -4,7 +4,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Menu from "./Menu.tsx";
 import MainCanvas from "./MainCanvas.tsx";
 
-
 const DrawerHeader = styled('div')(({theme}) => ({
   display: 'flex',
   alignItems: 'right',

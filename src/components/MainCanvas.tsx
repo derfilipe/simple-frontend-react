@@ -1,13 +1,11 @@
 import Typography from '@mui/material/Typography';
+import CardList from "./CardList.tsx";
 
 function MainCanvas() {
   return (
       <>
         <Typography paragraph>
-          Add Something here
-        </Typography>
-        <Typography paragraph>
-          Add something here
+          <CardList/>
         </Typography>
       </>
   );
