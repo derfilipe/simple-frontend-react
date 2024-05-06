@@ -122,7 +122,6 @@ function Menu() {
                 <MenuIcon/>
               </IconButton>
             </Box>
-
             <Box>
               <Typography>
                 <img
