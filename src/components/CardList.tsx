@@ -9,18 +9,22 @@ import {red} from '@mui/material/colors';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {Grid} from "@mui/material";
 
-
 const card1 = {
+  initials: "KR",
   title: "Kiwi",
   imageUrl: "/static/images/kiwi.jpeg",
   info: "Add info here",
+  price: 1.99,
 };
 
 const card2 = {
-  title: "Another Title",
+  initials: "KR",
+  title: "Watermelon",
   imageUrl: "/static/images/watermelon.jpeg",
   info: "Another Info",
+  price: 2.99,
 };
+
 const cards = [card1, card2];
 
 
@@ -34,7 +38,7 @@ export default function RecipeReviewCard() {
                 <CardHeader
                     avatar={
                       <Avatar sx={{bgcolor: red[500]}} aria-label="recipe">
-                        KR
+                        {card.initials}
                       </Avatar>
                     }
                     action={
@@ -52,7 +56,7 @@ export default function RecipeReviewCard() {
                 />
                 <CardContent>
                   <Typography variant="body2" color="text.secondary">
-                    {card.info}
+                    {card.info} - Price: {card.price}
                   </Typography>
                 </CardContent>
               </Card>
