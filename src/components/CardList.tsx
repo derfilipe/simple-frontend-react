@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import {red} from '@mui/material/colors';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {Grid} from "@mui/material";
+import TestComponent from "./TestComponent.tsx";
 
 const card1 = {
   initials: "KR",
@@ -28,40 +29,39 @@ const card2 = {
 const cards = [card1, card2];
 
 
-export default function RecipeReviewCard() {
+function CardList() {
 
   return (
-      <Grid container spacing={3}>
-        {cards.map((card, index) => (
-            <Grid item xs={8}>
-              <Card key={index} sx={{maxWidth: 345}}>
-                <CardHeader
-                    avatar={
-                      <Avatar sx={{bgcolor: red[500]}} aria-label="recipe">
+      <>
+        <TestComponent/>
+        <Grid container spacing={3}>
+          {cards.map((card, index) => (
+              <Grid item xs={8}>
+                <Card key={index} sx={{maxWidth: 345}}>
+                  <CardHeader
+                      avatar={<Avatar sx={{bgcolor: red[500]}} aria-label="recipe">
                         {card.initials}
-                      </Avatar>
-                    }
-                    action={
-                      <IconButton aria-label="settings">
+                      </Avatar>}
+                      action={<IconButton aria-label="settings">
                         <MoreVertIcon/>
-                      </IconButton>
-                    }
-                    title={card.title}
-                />
-                <CardMedia
-                    component="img"
-                    height="194"
-                    image={card.imageUrl}
-                    alt="Paella dish"
-                />
-                <CardContent>
-                  <Typography variant="body2" color="text.secondary">
-                    {card.info} - Price: {card.price}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-        ))}
-      </Grid>
+                      </IconButton>}
+                      title={card.title}/>
+                  <CardMedia
+                      component="img"
+                      height="194"
+                      image={card.imageUrl}
+                      alt="Paella dish"/>
+                  <CardContent>
+                    <Typography variant="body2" color="text.secondary">
+                      {card.info} - Price: {card.price}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+          ))}
+        </Grid>
+      </>
   );
 }
+
+export default CardList;
