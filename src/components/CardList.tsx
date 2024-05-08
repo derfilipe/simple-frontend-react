@@ -9,33 +9,21 @@ import {red} from '@mui/material/colors';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {Grid} from "@mui/material";
 import TestComponent from "./TestComponent.tsx";
-
-const card1 = {
-  initials: "KR",
-  title: "Kiwi",
-  imageUrl: "/static/images/kiwi.jpeg",
-  info: "Add info here",
-  price: 1.99,
-};
-
-const card2 = {
-  initials: "KR",
-  title: "Watermelon",
-  imageUrl: "/static/images/watermelon.jpeg",
-  info: "Another Info",
-  price: 2.99,
-};
-
-const cards = [card1, card2];
+import useMenu from "../hooks/useMenu.tsx";
 
 
 function CardList() {
+
+  const {data, isLoading, isError} = useMenu();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error fetching data</div>;
 
   return (
       <>
         <TestComponent/>
         <Grid container spacing={3}>
-          {cards.map((card, index) => (
+          {data?.cards.results.map((card, index) => (
               <Grid item xs={8}>
                 <Card key={index} sx={{maxWidth: 345}}>
                   <CardHeader
