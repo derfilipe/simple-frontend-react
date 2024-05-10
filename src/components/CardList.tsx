@@ -3,10 +3,10 @@ import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import {Grid} from "@mui/material";
 import {useQuery} from "@apollo/client";
-import GET_MENUS from "../graphql/queries/menu.query.ts";
 import Avatar from "@mui/material/Avatar";
 import {red} from "@mui/material/colors";
 import {MenuItem} from "../graphql/api/model/menuItem.ts";
+import {GET_MENUS} from "../graphql/queries/menu.query.ts";
 
 
 function CardList() {
@@ -17,7 +17,7 @@ function CardList() {
   if (error) return <div>Error fetching data</div>;
 
   return (
-      <Grid container spacing={3}>
+      <>
         {data?.menus.map((menu: MenuItem, index: number) => (
             <Grid item xs={8} key={index}> {/* Add the key prop here */}
               <Card sx={{maxWidth: 345}}>
@@ -35,7 +35,7 @@ function CardList() {
               </Card>
             </Grid>
         ))}
-      </Grid>
+      </>
   );
 }
 

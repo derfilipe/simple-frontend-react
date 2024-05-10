@@ -1,6 +1,6 @@
 export interface MenuItem {
 
-  name: number
+  name: string
 
   description: string
 
